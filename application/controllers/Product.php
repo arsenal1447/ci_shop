@@ -38,6 +38,9 @@ class Product extends CI_Controller
 	{
 		//判断是否二级分类，否则跳转到首页
 		$segments = $this->uri->uri_to_assoc();
+		//使用全局函数
+// 		$this->load->helper('mydebug');
+// 		pr($segments);
 		if (!empty($segments['product_id'])){
 		    $product_id = (int)$segments['product_id'];
 			$this->load->model('product_model');
@@ -61,6 +64,10 @@ class Product extends CI_Controller
 		//所属分类
         $this->load->model('category_model');	
         $category = $this->category_model->load($product['cat_id']);
+        echo "<pre>";
+        print_R($category);
+        echo "<pre>";
+        die('xxx');
 		$data['category'] = $category;
 		if (empty($data['category'])){
             $data['category'] = array('id' => '', 'name' => '');
