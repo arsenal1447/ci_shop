@@ -55,7 +55,8 @@ $config['uri_protocol']	='AUTO';//'REQUEST_URI';// "AUTO";
 | http://codeigniter.com/user_guide/general/urls.html
 */
 
-$config['url_suffix'] = ".html";
+// $config['url_suffix'] = ".html";//设置网址以".html"结尾
+$config['url_suffix'] = "";//默认结尾
 
 /*
 |--------------------------------------------------------------------------
